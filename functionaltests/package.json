@@ -1,0 +1,9 @@
+{
+  "name": "rest_tester",
+  "main": "dsb_main_spec.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "frisby": "1.14.5",
+    "jasmine-node": "0.8.5"
+  }
+}
