@@ -1,0 +1,10 @@
+# Copyright (c) [2017] Dell Inc. or its subsidiaries. All Rights Reserved.
+---
+applications:
+- name: pmysql_dsb
+  env:
+     "CF_ORG": "pcfdev-org"
+     "CF_SPACE": "pcfdev-space"
+     "CF_TARGET": "api.local.pcfdev.io"
+     "CF_ADMIN_USERNAME": "user"
+     "CF_ADMIN_PASSWORD": "pass"
