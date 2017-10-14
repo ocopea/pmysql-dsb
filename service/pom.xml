@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.emc.ocopea.mysql-dsb</groupId>
+        <artifactId>mysql-dsb-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>mysql-dsb-service</artifactId>
+    <name>MySQL DSB Service</name>
+    <description>MySQL DSB MicroService implementation</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.emc.ocopea.dev-tools</groupId>
+                                    <artifactId>checkstyle</artifactId>
+                                    <version>${ocopea.dev-tools.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/checkstyle</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>7.4</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <configLocation>${project.build.directory}/checkstyle/checkstyle.xml</configLocation>
+                            <encoding>UTF-8</encoding>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>true</failsOnError>
+                            <failOnViolation>true</failOnViolation>
+                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                            <linkXRef>false</linkXRef>
+                        </configuration>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <!-- Usually when implementing DSBs there are external libraries we depend on-->
+        <driver.version>some-version</driver.version>
+        <swagger-core-version>1.5.10</swagger-core-version>
+        <cxf-version>3.1.8</cxf-version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Dependency on DSB API we need to implement -->
+       <dependency>
+            <groupId>com.emc.ocopea.dsb</groupId>
+            <artifactId>dsb-java-web-api</artifactId>
+            <version>${ocopea.dsb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>utilities</groupId>
+            <artifactId>ocopea-util-mysql</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <!-- Dependency on microservice library for implementing our service -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice.api</groupId>
+            <artifactId>microservice-api</artifactId>
+            <version>${microservice.api.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Dependency on Copy Repo API - DSBs need that to post copies to the copy repo
+        Especially when using the default rest api to stream the data into the repo -->
+        <dependency>
+            <groupId>com.emc.ocopea.crb</groupId>
+            <artifactId>crb-java-web-api</artifactId>
+            <version>${ocopea.crb.version}</version>
+        </dependency>
+
+        <!-- For testing -->
+        <dependency>
+            <groupId>com.emc.ocopea.microservice</groupId>
+            <artifactId>microservice-test-utils</artifactId>
+            <version>${microservice.runtime.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+        <version>20090211</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.emc.ocopea.pcf-tools</groupId>
+            <artifactId>cf-external-resource-manager</artifactId>
+            <version>${ocopea.pcf-tools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>1.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <version>1.6.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
+
