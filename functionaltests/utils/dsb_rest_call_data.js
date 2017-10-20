@@ -28,7 +28,9 @@ exports.getCreateServiceInstanceData = async function (instanceId, spaceName, re
                 createInstanceData = {
                     "instanceId": instanceId,
                     "namespaces": [spaceName],
-                    "instanceSettings": { "plan": planName },
+                    "instanceSettings": {
+                        "plan": planName
+                    },
                     "restoreInfo": restoreInfo
                 };
                 exports.createInstanceData = createInstanceData
@@ -99,7 +101,7 @@ exports.getDSBInfoExpect = function (afterFunction) {
                 var JsonData = {}
                 JsonData["name"] = "mysql-dsb"
                 JsonData["type"] = "datasource"
-                JsonData["description"] = "MySql DSB implementation in java"
+                JsonData["description"] = "Data Service Broker for p-mysql data service"
                 JsonData["plans"] = []
                 for (plan in service_plans) {
                     var planDetails = {}
@@ -128,7 +130,9 @@ exports.getCopyDetails = function (crbUrl, copyId) {
     return {
         "copyRepoProtocol": "",
         "copyRepoProtocolVersion": "",
-        "copyRepoCredentials": { "url": crbUrl },
+        "copyRepoCredentials": {
+            "url": crbUrl
+        },
         "copyType": "logical",
         "copyId": copyId,
         "copyTime": 1686653067003
@@ -136,7 +140,11 @@ exports.getCopyDetails = function (crbUrl, copyId) {
 }
 
 exports.getCreateCRBRepositoryTargetData = function (crb_repo_address, crb_repo_user, crb_repo_password) {
-    return { "addr": crb_repo_address, "user": crb_repo_user, "password": crb_repo_password }
+    return {
+        "addr": crb_repo_address,
+        "user": crb_repo_user,
+        "password": crb_repo_password
+    }
 }
 
 exports.getRestoreInfoDetails = function (crbUrl, copyId) {
@@ -144,7 +152,9 @@ exports.getRestoreInfoDetails = function (crbUrl, copyId) {
         "copyId": copyId,
         "copyRepoProtocol": "",
         "copyRepoProtocolVersion": "",
-        "copyRepoCredentials": { "url": crbUrl },
+        "copyRepoCredentials": {
+            "url": crbUrl
+        },
         "copyType": "logical"
     }
 }
