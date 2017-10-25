@@ -137,7 +137,7 @@
             <artifactId>javax.ws.rs-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.emc.ocopea.pcf-tools</groupId>
+            <groupId>com.emc.ocopea.cloudfoundry</groupId>
             <artifactId>cf-external-resource-manager</artifactId>
             <version>${ocopea.pcf-tools.version}</version>
         </dependency>
