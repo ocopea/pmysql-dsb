@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class MySqlDSBMicroService extends MicroService {
     private static final String SERVICE_NAME = "MySql DSB";
     private static final String SERVICE_BASE_URI = "mysql-dsb";
-    private static final String SERVICE_DESCRIPTION = "MySql DSB implementation in java";
+    private static final String SERVICE_DESCRIPTION = "Data Service Broker for p-mysql data service";
     private static final int SERVICE_VERSION = 1;
     private static final Logger logger = LoggerFactory.getLogger(MySqlDSBMicroService.class);
 
