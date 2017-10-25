@@ -4,7 +4,7 @@ package com.emc.ocopea.dsb.mysql;
 import com.emc.microservice.Context;
 import com.emc.microservice.MicroService;
 import com.emc.microservice.MicroServiceInitializationHelper;
-import com.emc.ocopea.hackathon.CloudFoundryClientResourceDescriptor;
+import com.emc.ocopea.cfmanager.CloudFoundryClientResourceDescriptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class MySqlDSBMicroService extends MicroService {
     private static final String SERVICE_NAME = "MySql DSB";
     private static final String SERVICE_BASE_URI = "mysql-dsb";
-    private static final String SERVICE_DESCRIPTION = "Data Service Broker for p-mysql data service";
+    private static final String SERVICE_DESCRIPTION = "MySql DSB implementation in java";
     private static final int SERVICE_VERSION = 1;
     private static final Logger logger = LoggerFactory.getLogger(MySqlDSBMicroService.class);
 

@@ -4,7 +4,7 @@ package com.emc.ocopea.dsb.mysql;
 import com.emc.dpa.dev.DevResourceProvider;
 import com.emc.microservice.resource.ResourceProvider;
 import com.emc.microservice.runner.MicroServiceRunner;
-import com.emc.ocopea.hackathon.CloudFoundryClientResourceConfiguration;
+import com.emc.ocopea.cfmanager.CloudFoundryClientResourceConfiguration;
 
 import java.io.IOException;
 import java.sql.SQLException;

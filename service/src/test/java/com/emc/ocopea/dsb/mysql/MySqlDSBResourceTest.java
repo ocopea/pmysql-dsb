@@ -8,7 +8,7 @@ import com.emc.ocopea.dsb.DsbRestoreCopyInfo;
 import com.emc.ocopea.dsb.Error;
 import com.emc.ocopea.dsb.ServiceInstance;
 import com.emc.ocopea.dsb.ServiceInstanceDetails;
-import com.emc.ocopea.hackathon.CFConnection;
+import com.emc.ocopea.cfmanager.CFConnection;
 import org.cloudfoundry.client.CloudFoundryClient;
 import org.cloudfoundry.client.v2.Metadata;
 import org.cloudfoundry.client.v2.serviceinstances.ListServiceInstancesRequest;
