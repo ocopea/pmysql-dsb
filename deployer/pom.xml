@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.emc.ocopea.mysql-dsb</groupId>
         <artifactId>mysql-dsb-parent</artifactId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>mysql-dsb-deployer</artifactId>
