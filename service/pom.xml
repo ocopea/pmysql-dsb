@@ -139,7 +139,7 @@
         <dependency>
             <groupId>com.emc.ocopea.cloudfoundry</groupId>
             <artifactId>cf-external-resource-manager</artifactId>
-            <version>${ocopea.pcf-tools.version}</version>
+            <version>${ocopea.cf-tools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
